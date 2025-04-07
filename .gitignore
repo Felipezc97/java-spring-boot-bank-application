@@ -1,24 +1,131 @@
-# Compiled class file
-*.class
+# =====================================
+# Build y Dependencias
+# =====================================
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
 
-# Log file
+# Gradle
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+
+# Logs y reportes
 *.log
+*.log.*
+logs/
+**/logs/
 
-# BlueJ files
-*.ctxt
+# =====================================
+# IDEs y Editores
+# =====================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+/out/
+/.idea_modules/
+/.idea/runConfigurations/
+/.idea/copyright/
+/.idea/scopes/
+/.idea/*.xml
+/.idea/libraries/
+/.idea/shelf/
+/.idea/uiDesigner.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Package Files #
+# STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+
+# =====================================
+# Sistema Operativo
+# =====================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# =====================================
+# Java y Spring Boot
+# =====================================
+# Archivos compilados
+*.class
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Spring Boot
+application.properties.local
+application-dev.properties
+application-prod.properties
+/config/application-*.properties
+
+# =====================================
+# Otros
+# =====================================
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Bases de datos embebidas
+*.db
+*.h2.db
+
+# Entorno
+.env
+.venv/
+.env.local
+
+# Coverage
+coverage/
+*.exec
+*.lcov
+
+# IntelliJ DataSources
+/dataSources/
+/dataSources.local.xml
