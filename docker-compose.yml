@@ -13,6 +13,11 @@ services:
     volumes:
       - ./accounts-db:/docker-entrypoint-initdb.d
       - accounts-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=accountsPassword"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
     networks:
       - bank-application-net
 
@@ -25,7 +30,8 @@ services:
     ports:
       - "8081:8081"
     depends_on:
-      - accounts-db
+      accounts-db:
+        condition: service_healthy
     networks:
       - bank-application-net
 
@@ -40,6 +46,11 @@ services:
     volumes:
       - ./clients-db:/docker-entrypoint-initdb.d
       - clients-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=clientsPassword"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
     networks:
       - bank-application-net
 
@@ -52,7 +63,8 @@ services:
     ports:
       - "8082:8082"
     depends_on:
-      - clients-db
+      clients-db:
+        condition: service_healthy
     networks:
       - bank-application-net
 
