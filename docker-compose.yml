@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+
+  # Accounts database
+  accounts-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: accountsPassword
+      MYSQL_DATABASE: accounts_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./accounts-db:/docker-entrypoint-initdb.d
+      - accounts-data:/var/lib/mysql
+    networks:
+      - bank-application-net
+
+  # Accounts microservice
+  accounts-service:
+    build: ./accounts-service
+    environment:
+      ACCOUNTS_DB_USER: root
+      ACCOUNTS_DB_PASSWORD: accountsPassword
+    ports:
+      - "8081:8081"
+    depends_on:
+      - accounts-db
+    networks:
+      - bank-application-net
+
+  # Clients database
+  clients-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: clientsPassword
+      MYSQL_DATABASE: clients_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./clients-db:/docker-entrypoint-initdb.d
+      - clients-data:/var/lib/mysql
+    networks:
+      - bank-application-net
+
+  # Clients microservice
+  clients-service:
+    build: ./clients-service
+    environment:
+      CLIENTS_DB_USER: root
+      CLIENTS_DB_PASSWORD: clientsPassword
+    ports:
+      - "8082:8082"
+    depends_on:
+      - clients-db
+    networks:
+      - bank-application-net
+
+volumes:
+  clients-data:
+  accounts-data:
+
+networks:
+  bank-application-net:
+    driver: bridge

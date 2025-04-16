@@ -1,0 +1,20 @@
+package com.felipezc97.backend.accounts.model.dto;
+
+import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class BankStatementDto {
+	private Date date;
+	private String client;
+	private String accountNumber;
+	private String accountType;
+	private double initialAmount;
+	private Boolean isActive;
+	private String transactionType;
+	private double amount;
+	private double balance;
+}

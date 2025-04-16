@@ -1,0 +1,139 @@
+# =====================================
+# Build y Dependencias
+# =====================================
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
+.mvn/
+mvnw
+mvnw.cmd
+
+# Gradle
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+
+# Logs y reportes
+*.log
+*.log.*
+logs/
+**/logs/
+
+# =====================================
+# IDEs y Editores
+# =====================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+/out/
+/.idea_modules/
+/.idea/runConfigurations/
+/.idea/copyright/
+/.idea/scopes/
+/.idea/*.xml
+/.idea/libraries/
+/.idea/shelf/
+/.idea/uiDesigner.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# =====================================
+# Sistema Operativo
+# =====================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# =====================================
+# Java y Spring Boot
+# =====================================
+# Archivos compilados
+*.class
+*.jar
+*.war
+*.ear
+
+# Spring Boot
+application.properties.local
+application-dev.properties
+application-prod.properties
+/config/application-*.properties
+
+# =====================================
+# Otros
+# =====================================
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Bases de datos embebidas
+*.db
+*.h2.db
+
+# Entorno
+.env
+.venv/
+.env.local
+
+# Coverage
+coverage/
+*.exec
+*.lcov
+
+# IntelliJ DataSources
+/dataSources/
+/dataSources.local.xml
