@@ -24,6 +24,7 @@ mvn clean package -DskipTests -f accounts-service/pom.xml
 mvn clean package -DskipTests -f clients-service/pom.xml
 
 # Run application
+docker-compose down -v --rmi all ## Eliminate the previous executed versions
 docker-compose up --build
 ```
 
